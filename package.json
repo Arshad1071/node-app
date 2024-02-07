@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Arshad1071/node-app#readme",
   "dependencies": {
+    "concurrently": "^8.2.2",
     "dotenv": "^16.4.1",
     "express": "^4.18.1",
     "nodemon": "^2.0.19"
