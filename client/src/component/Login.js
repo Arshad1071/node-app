@@ -33,10 +33,6 @@ export default function Login() {
         // Handle errors
         console.error(error);
       });
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
   };
 
   return (
