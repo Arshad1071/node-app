@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "node app for learning",
   "main": "index.js",
-  "engines": {
-    "node": "20.17.1"
-  },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
