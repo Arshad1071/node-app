@@ -1,5 +1,5 @@
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
+import axios from "../uitils/axios";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -20,6 +20,19 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    axios
+      .get("/api/login", {
+        email: data.get("email"),
+        password: data.get("password"),
+      })
+      .then((response) => {
+        // Handle the response
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Handle errors
+        console.error(error);
+      });
     console.log({
       email: data.get("email"),
       password: data.get("password"),
