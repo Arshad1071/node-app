@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const jwt = require("jsonwebtoken");  
 // Secret key used to sign and verify the JWT
 const secretKey = "your-secret-key";
 
