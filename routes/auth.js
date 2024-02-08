@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express();
+const router = express.Router();
 
 // Secret key used to sign and verify the JWT
 const secretKey = "your-secret-key";
@@ -27,7 +27,7 @@ const verifyToken = (req, res, next) => {
   });
 };
 
-app.post("/api/login", (req, res) => {
+router.post("/api/login", (req, res) => {
   const { username, password } = req.body;
   const user = users.find(
     (u) => u.username === username && u.password === password
@@ -46,8 +46,8 @@ app.post("/api/login", (req, res) => {
 });
 
 // Protected route that requires a valid JWT
-app.get("/protected", verifyToken, (req, res) => {
+router.get("/protected", verifyToken, (req, res) => {
   res.json({ message: "This is a protected route", user: req.user });
 });
 
-module.router;
+module.exports = router;

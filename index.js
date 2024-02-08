@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-require("./routes/auth");
+
+const routes = require("./routes/auth");
 
 const PORT = process.env.PORT || 5003;
 
@@ -10,6 +11,8 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
+
+app.use("/", routes);
 
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
