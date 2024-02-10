@@ -1,12 +1,17 @@
-import React from "react";
-import Login from "./component/Login";
+import React from 'react';
+import './App.module.scss';
+import BaseLayout from "./components/BaseLayout";
+import {BrowserRouter} from "react-router-dom";
 
-const App = () => {
-  return (
-    <div>
-      <Login />
-    </div>
-  );
-};
+function App() {
+   return (
+      <div>
+         <BrowserRouter>
+            <BaseLayout/>
+         </BrowserRouter>
+      </div>
+   );
+}
+
 
 export default App;
